@@ -5,7 +5,9 @@ const Footer = () => {
     return (
         <div>
             <p>Made By J. Steven Jarrett</p>
-            <FontAwesomeIcon icon={faGithub}/>
+            <a href="https://github.com/Bantchee" target={"_blank"} rel="noreferrer">
+                <FontAwesomeIcon icon={faGithub}/>
+            </a>
         </div>
     )
 }
