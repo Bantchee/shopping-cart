@@ -1,6 +1,15 @@
+import { Link } from "react-router-dom";
+import yogaClassImg from "../img/yoga-class.jpg";
+
 const Home = () => {
     return (
-      <div>Home Page</div>
+      <div>
+        <div>
+          <p>2023 Fitness Collection</p>
+          <Link to="/shop">Shop Now</Link>
+        </div>
+        <img src={yogaClassImg} alt="People in yoga class"/>
+      </div>
     );
   }
   
