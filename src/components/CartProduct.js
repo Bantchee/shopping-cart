@@ -1,7 +1,7 @@
 import React from "react";
+import { useEffect } from "react";
 
-const CartProduct = ({name, img, price, quantity, incrementQuantity, decrementQuantity }) => {
-
+const CartProduct = ({name, img, price, quantity, incrementQuantity, decrementQuantity, removeProduct }) => {
   return(
     <div>
       <img src={img} alt={name} />
@@ -20,7 +20,11 @@ const CartProduct = ({name, img, price, quantity, incrementQuantity, decrementQu
             -
         </button>
       </div>
-      
+      <button
+        onClick={removeProduct}
+      >
+          Delete
+      </button>
     </div>
   );
 }

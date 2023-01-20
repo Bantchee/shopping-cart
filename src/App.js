@@ -96,12 +96,6 @@ const App = () => {
     return oldProduct;
   });
 
-  const removeProductFromCart = (name) => {
-    // find product by name
-    // remove product from cart
-    // setCartProducts
-  };
-
   const incrementProductQuantity = (name) => {
     let product = findProductInCart(name);
     product.quantity += 1;
@@ -114,6 +108,10 @@ const App = () => {
     setCartProducts(replaceProductInCart(product, cartProducts));
   };
 
+  const removeProductFromCart = (name) => {
+    setCartProducts(cartProducts.filter((product) => product.name !== name));
+  }
+
   return (
     <BrowserRouter>
       <Header showCart={showCart} setShowCart={setShowCart} />
@@ -124,10 +122,10 @@ const App = () => {
       {
         (showCart) ? 
           <Cart 
-            products={cartProducts} 
-            setProducts={setCartProducts}
+            products={cartProducts}
             incrementProductQuantity={incrementProductQuantity}
             decrementProductQuantity={decrementProductQuantity}
+            removeProductFromCart={removeProductFromCart}
           /> : 
           null
         }

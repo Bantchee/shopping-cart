@@ -1,7 +1,7 @@
 import React from "react";
 import Product from "./CartProduct.js";
 
-const Cart = ({ products, incrementProductQuantity, decrementProductQuantity }) => {
+const Cart = ({ products, incrementProductQuantity, decrementProductQuantity, removeProductFromCart }) => {
     return (
         <div>
             <div>
@@ -16,6 +16,7 @@ const Cart = ({ products, incrementProductQuantity, decrementProductQuantity }) 
                             quantity={product.quantity}
                             incrementQuantity={() => incrementProductQuantity(product.name)}
                             decrementQuantity={() => decrementProductQuantity(product.name)}
+                            removeProduct={() => removeProductFromCart(product.name)}
                         />
                     </div>
                     )
