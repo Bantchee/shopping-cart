@@ -68,11 +68,10 @@ const App = () => {
   const [showCart, setShowCart] = useState(false);
 
   const addProductToCart = (name, img, price) => {
-    // console.log({name, img, price})
     let tempCart = JSON.parse(JSON.stringify(cartProducts));
     let product = findProductInCart(name);
     if(product) {
-      product = incrementProductQuantity(product.name);
+      product.quantity += 1;
       tempCart = replaceProductInCart(product, tempCart);
     } 
     else {
@@ -90,7 +89,7 @@ const App = () => {
 
   const findProductInCart = (name) => cartProducts.find(product => product.name === name);
 
-  const replaceProductInCart = (product, cart) => cart.map(oldProduct => {
+  const replaceProductInCart = (product, cartProducts) => cartProducts.map(oldProduct => {
     if(oldProduct.name === product.name) {
       return product;
     }
@@ -106,18 +105,14 @@ const App = () => {
   const incrementProductQuantity = (name) => {
     let product = findProductInCart(name);
     product.quantity += 1;
-    return product; 
+    setCartProducts(replaceProductInCart(product, cartProducts));
   };
 
   const decrementProductQuantity = (name) => {
-    // find product by name
-    // decrease product quantity by 1
-    // setCartProducts
+    let product = findProductInCart(name);
+    product.quantity -= (product.quantity > 1) ? 1 : 0;
+    setCartProducts(replaceProductInCart(product, cartProducts));
   };
-
-  useEffect(() => {
-    console.log(cartProducts);
-  }, [cartProducts]);
 
   return (
     <BrowserRouter>
@@ -126,7 +121,16 @@ const App = () => {
         <Route path="/shopping-cart" element={<Home />}/>
         <Route path="/shopping-cart/shop" element={<Shop products={products} addProductToCart={addProductToCart}/>}/>
       </Routes>
-      {(showCart) ? <Cart products={cartProducts} setProducts={setCartProducts}/> : null}
+      {
+        (showCart) ? 
+          <Cart 
+            products={cartProducts} 
+            setProducts={setCartProducts}
+            incrementProductQuantity={incrementProductQuantity}
+            decrementProductQuantity={decrementProductQuantity}
+          /> : 
+          null
+        }
       <Footer />
       </BrowserRouter>
   );

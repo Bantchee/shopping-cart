@@ -8,9 +8,17 @@ const CartProduct = ({name, img, price, quantity, incrementQuantity, decrementQu
       <p>{name}</p>
       <p>{price}</p>
       <div>
-        <button>+</button>
+        <button
+            onClick={incrementQuantity}
+        >
+            +
+        </button>
         <p>{quantity}</p>
-        <button>-</button>
+        <button
+            onClick={decrementQuantity}
+        >
+            -
+        </button>
       </div>
       
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import Product from "./CartProduct.js";
 
-const Cart = ({ products, setProducts }) => {
+const Cart = ({ products, incrementProductQuantity, decrementProductQuantity }) => {
     return (
         <div>
             <div>
@@ -10,10 +10,12 @@ const Cart = ({ products, setProducts }) => {
                     return (
                     <div key={index}>
                         <Product 
-                        name={product.name} 
-                        img={product.img} 
-                        price={product.price} 
-                        quantity={product.quantity}
+                            name={product.name} 
+                            img={product.img} 
+                            price={product.price} 
+                            quantity={product.quantity}
+                            incrementQuantity={() => incrementProductQuantity(product.name)}
+                            decrementQuantity={() => decrementProductQuantity(product.name)}
                         />
                     </div>
                     )
