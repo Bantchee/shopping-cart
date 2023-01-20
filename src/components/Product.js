@@ -1,3 +1,5 @@
+import React from "react";
+
 const Product = ({ id, name, img, price }) => {
     return(
     <div key={id}>

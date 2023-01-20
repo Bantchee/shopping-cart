@@ -13,6 +13,8 @@ import womenTankImg from "./img/products/women-tank.jpg";
 import waterBottleImg from "./img/products/water-bottle.jpg";
 import socksImg from "./img/products/socks.jpg";
 import bagImg from "./img/products/bag.jpg";
+import React from "react";
+import Cart from "./components/Cart";
 
 const App = () => {
   const [products, setProducts] = useState([
@@ -62,8 +64,8 @@ const App = () => {
       price: 52.00,
     },
   ]);
-  
   const [cartProducts, setCartProducts] = useState([]);
+  const [showCart, setShowCart] = useState(false);
 
   const addProductToCart = (name, img, price) => {
     //If product in cart
@@ -92,11 +94,12 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header showCart={showCart} setShowCart={setShowCart} />
       <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/shop" element={<Shop products={products}/>}/>
+        <Route path="/shopping-cart" element={<Home />}/>
+        <Route path="/shopping-cart/shop" element={<Shop products={products}/>}/>
       </Routes>
+      {(showCart) ? <Cart products={cartProducts} setProducts={setCartProducts}/> : null}
       <Footer />
       </BrowserRouter>
   );

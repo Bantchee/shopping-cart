@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import yogaClassImg from "../img/yoga-class.jpg";
+import React from "react";
 
 const Home = () => {
     return (
