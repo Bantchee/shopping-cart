@@ -6,7 +6,7 @@ const CartProduct = ({name, img, price, quantity, incrementQuantity, decrementQu
     <div>
       <img src={img} alt={name} />
       <p>{name}</p>
-      <p>{price}</p>
+      <p>{price * quantity}</p>
       <div>
         <button
             onClick={incrementQuantity}
