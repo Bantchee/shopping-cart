@@ -1,14 +1,15 @@
 import React from "react";
 
-const Product = ({ id, name, img, price }) => {
-    return(
-    <div key={id}>
-        <img src={img} alt={name} />
-        <p>{name}</p>
-        <p>{price}</p>
-        <button>Add To Cart</button>
-      </div>
-    );
+const Product = ({name, img, price, onClick }) => {
+
+  return(
+    <div>
+      <img src={img} alt={name} />
+      <p>{name}</p>
+      <p>{price}</p>
+      <button onClick={onClick}>Add To Cart</button>
+    </div>
+  );
 }
 
 export default Product;

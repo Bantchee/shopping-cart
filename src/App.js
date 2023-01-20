@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer"
 import Home from "./components/Home";
 import Shop from "./components/Shop";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import menShirtImg from "./img/products/men-shirt.jpg";
 import menShortsImg from "./img/products/men-shorts.jpg";
 import menTankImg from "./img/products/men-tank.jpg";
@@ -68,11 +68,34 @@ const App = () => {
   const [showCart, setShowCart] = useState(false);
 
   const addProductToCart = (name, img, price) => {
-    //If product in cart
-      // increase quantity of product by 1
-    // else
-      // add product to cart, set quantity to 1 {name, img, price, quantity}
+    // console.log({name, img, price})
+    let tempCart = JSON.parse(JSON.stringify(cartProducts));
+    let product = findProductInCart(name);
+    if(product) {
+      product = incrementProductQuantity(product.name);
+      tempCart = replaceProductInCart(product, tempCart);
+    } 
+    else {
+      product = {
+        name: name,
+        img: img,
+        price: price,
+        quantity: 1,
+      }
+      tempCart.push(product);
+    }
+    
+    setCartProducts(tempCart);
   };
+
+  const findProductInCart = (name) => cartProducts.find(product => product.name === name);
+
+  const replaceProductInCart = (product, cart) => cart.map(oldProduct => {
+    if(oldProduct.name === product.name) {
+      return product;
+    }
+    return oldProduct;
+  });
 
   const removeProductFromCart = (name) => {
     // find product by name
@@ -81,9 +104,9 @@ const App = () => {
   };
 
   const incrementProductQuantity = (name) => {
-    // find product by name
-    // increase product quantity by 1
-    // setCartProducts
+    let product = findProductInCart(name);
+    product.quantity += 1;
+    return product; 
   };
 
   const decrementProductQuantity = (name) => {
@@ -92,12 +115,16 @@ const App = () => {
     // setCartProducts
   };
 
+  useEffect(() => {
+    console.log(cartProducts);
+  }, [cartProducts]);
+
   return (
     <BrowserRouter>
       <Header showCart={showCart} setShowCart={setShowCart} />
       <Routes>
         <Route path="/shopping-cart" element={<Home />}/>
-        <Route path="/shopping-cart/shop" element={<Shop products={products}/>}/>
+        <Route path="/shopping-cart/shop" element={<Shop products={products} addProductToCart={addProductToCart}/>}/>
       </Routes>
       {(showCart) ? <Cart products={cartProducts} setProducts={setCartProducts}/> : null}
       <Footer />

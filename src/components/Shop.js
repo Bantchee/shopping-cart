@@ -1,12 +1,21 @@
 import Product from "./Product";
 import React from "react";
 
-const Shop = ({ products }) => {
+const Shop = ({ products, addProductToCart}) => {
     return (
       <div>
         {
           products.map((product, index) => {
-            return <Product id={index} name={product.name} img={product.img} price={product.price} />
+            return (
+              <div key={index}>
+                <Product 
+                  name={product.name} 
+                  img={product.img} 
+                  price={product.price} 
+                  onClick={() => addProductToCart(product.name, product.img, product.price)}
+                />
+              </div>
+              )
           })
         }
       </div>

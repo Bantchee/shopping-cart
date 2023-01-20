@@ -20,7 +20,7 @@ const Header = ({ showCart, setShowCart }) => {
                     </Link>
                     <li>
                         <button 
-                            class="cursor-pointer"
+                            className="cursor-pointer"
                             onClick={() => setShowCart(!showCart)}
                         >
                             <FontAwesomeIcon icon={faShoppingCart} />
