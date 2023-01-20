@@ -63,6 +63,32 @@ const App = () => {
     },
   ]);
   
+  const [cartProducts, setCartProducts] = useState([]);
+
+  const addProductToCart = (name, img, price) => {
+    //If product in cart
+      // increase quantity of product by 1
+    // else
+      // add product to cart, set quantity to 1 {name, img, price, quantity}
+  };
+
+  const removeProductFromCart = (name) => {
+    // find product by name
+    // remove product from cart
+    // setCartProducts
+  };
+
+  const incrementProductQuantity = (name) => {
+    // find product by name
+    // increase product quantity by 1
+    // setCartProducts
+  };
+
+  const decrementProductQuantity = (name) => {
+    // find product by name
+    // decrease product quantity by 1
+    // setCartProducts
+  };
 
   return (
     <BrowserRouter>
