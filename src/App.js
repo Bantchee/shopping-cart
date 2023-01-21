@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer"
 import Home from "./components/Home";
 import Shop from "./components/Shop";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import menShirtImg from "./img/products/men-shirt.jpg";
 import menShortsImg from "./img/products/men-shorts.jpg";
 import menTankImg from "./img/products/men-tank.jpg";

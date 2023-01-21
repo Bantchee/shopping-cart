@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 
 const CartProduct = ({name, img, price, quantity, incrementQuantity, decrementQuantity, removeProduct }) => {
   return(
