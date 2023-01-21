@@ -1,9 +1,17 @@
 import React from "react";
 import Product from "./CartProduct.js";
+import { faX } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Cart = ({ products, incrementProductQuantity, decrementProductQuantity, removeProductFromCart }) => {
+const Cart = ({ products, onClickCloseCart, incrementProductQuantity, decrementProductQuantity, removeProductFromCart }) => {
     return (
         <div>
+            <div>
+            <button
+                onClick={onClickCloseCart}
+            >
+                <FontAwesomeIcon icon={faX} />
+            </button>
             <div>
             {
                 products.map((product, index) => {
@@ -20,8 +28,16 @@ const Cart = ({ products, incrementProductQuantity, decrementProductQuantity, re
                         />
                     </div>
                     )
-          })
-        }
+                })
+            }
+            </div>
+            <div>
+                <p>
+                    Total: ${products.reduce((value, product) => value + (product.price * product.quantity), 0)}.00
+                </p>
+                <button>Checkout</button>
+            </div>
+            
             </div>
         </div>
     );

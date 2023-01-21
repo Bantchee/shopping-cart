@@ -123,6 +123,7 @@ const App = () => {
         (showCart) ? 
           <Cart 
             products={cartProducts}
+            onClickCloseCart={() => setShowCart(!showCart)}
             incrementProductQuantity={incrementProductQuantity}
             decrementProductQuantity={decrementProductQuantity}
             removeProductFromCart={removeProductFromCart}
