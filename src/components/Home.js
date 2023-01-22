@@ -20,7 +20,7 @@ const Home = () => {
             2023 Fitness Collection
           </p>
           <Link 
-            to="/shop"
+            to="/shopping-cart/shop"
             className="bg-cyan-600 hover:bg-cyan-400 px-2 rounded-full
                         md:px-4 py-2"
           >Shop Now</Link>
