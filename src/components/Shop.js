@@ -3,7 +3,9 @@ import React from "react";
 
 const Shop = ({ products, addProductToCart}) => {
     return (
-      <div>
+      <div
+        className="p-4"
+      >
         {
           products.map((product, index) => {
             return (
