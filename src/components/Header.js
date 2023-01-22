@@ -7,7 +7,8 @@ const Header = ({ showCart, setShowCart }) => {
     return (
         <div 
             className="flex flex-col bg-neutral-800 py-4 gap-2 
-                        lg:flex-row lg:justify-between lg:px-48"
+                        lg:flex-row lg:justify-between lg:px-32
+                        xl:px-48"
         >
             <Link to="/shopping-cart"
                 className="flex justify-center"
