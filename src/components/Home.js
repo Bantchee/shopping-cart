@@ -7,7 +7,8 @@ const Home = () => {
       <div
         className="relative flex justify-center items-center text-xl
             md:mx-16 md:text-1xl
-            lg:mx-32 md:text-4xl"
+            lg:mx-32 md:text-4xl
+            h-[100%]"
       >
         <div
           className="absolute my-auto mx-auto text-neutral-800 font-bold flex flex-col items-center justify-center

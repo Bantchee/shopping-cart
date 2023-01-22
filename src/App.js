@@ -114,24 +114,24 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Header showCart={showCart} setShowCart={setShowCart} />
-      <Routes>
-        <Route path="/shopping-cart" element={<Home />}/>
-        <Route path="/shopping-cart/shop" element={<Shop products={products} addProductToCart={addProductToCart}/>}/>
-      </Routes>
-      {
-        (showCart) ? 
-          <Cart 
-            products={cartProducts}
-            onClickCloseCart={() => setShowCart(!showCart)}
-            incrementProductQuantity={incrementProductQuantity}
-            decrementProductQuantity={decrementProductQuantity}
-            removeProductFromCart={removeProductFromCart}
-          /> : 
-          null
-        }
-      <Footer />
-      </BrowserRouter>
+        <Header showCart={showCart} setShowCart={setShowCart} />
+        <Routes>
+          <Route path="/shopping-cart" element={<Home />}/>
+          <Route path="/shopping-cart/shop" element={<Shop products={products} addProductToCart={addProductToCart}/>}/>
+        </Routes>
+        {
+          (showCart) ? 
+            <Cart 
+              products={cartProducts}
+              onClickCloseCart={() => setShowCart(!showCart)}
+              incrementProductQuantity={incrementProductQuantity}
+              decrementProductQuantity={decrementProductQuantity}
+              removeProductFromCart={removeProductFromCart}
+            /> : 
+            null
+          }
+        <Footer />
+    </BrowserRouter>
   );
 }
 
