@@ -7,7 +7,8 @@ const Footer = () => {
         <div
             className="flex flex-col gap-1 text-xl items-center bg-neutral-800 text-cyan-600 py-2
                         md:flex-row md:text-2xl md:justify-center md:gap-2
-                        lg:text-3xl lg:gap-4"
+                        lg:text-3xl lg:gap-4
+                        justify-self-end"
         >
             <p
                 className="font-bold"
