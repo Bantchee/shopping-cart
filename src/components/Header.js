@@ -13,7 +13,7 @@ const Header = ({ showCart, setShowCart }) => {
                 className="flex justify-center"
             >
                 <h1
-                    className="text-4xl font-bold text-cyan-600 text-center md:text-5xl lg:text-[4.0rem]"
+                    className="text-4xl font-bold text-cyan-600 hover:text-cyan-400 text-center md:text-5xl lg:text-[4.0rem]"
                 >
                     Gymshark
                 </h1>
@@ -28,7 +28,7 @@ const Header = ({ showCart, setShowCart }) => {
                         className="mt-auto mb-auto"
                     >
                         <li
-                            className="text-2xl md:text-3xl lg:text-4xl font-bold text-cyan-600"
+                            className="text-2xl md:text-3xl lg:text-4xl font-bold text-cyan-600 hover:text-cyan-400"
                         >
                             Home
                         </li>
@@ -38,7 +38,7 @@ const Header = ({ showCart, setShowCart }) => {
                         className="mt-auto mb-auto"
                     >
                         <li
-                            className="text-2xl md:text-3xl lg:text-4xl font-bold text-cyan-600"
+                            className="text-2xl md:text-3xl lg:text-4xl font-bold text-cyan-600 hover:text-cyan-400"
                         >
                             Shop
                         </li>
@@ -46,7 +46,7 @@ const Header = ({ showCart, setShowCart }) => {
                     <li>
                         <button 
                             onClick={() => setShowCart(!showCart)}
-                            className="cursor-pointer p-4 bg-cyan-600 rounded-full relative"
+                            className="cursor-pointer p-4 bg-cyan-600 rounded-full relative hover:bg-cyan-400"
                         >
                             <FontAwesomeIcon 
                                 icon={faShoppingCart} 
