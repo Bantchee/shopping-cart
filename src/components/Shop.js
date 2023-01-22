@@ -4,12 +4,13 @@ import React from "react";
 const Shop = ({ products, addProductToCart}) => {
     return (
       <div
-        className="p-4"
+        className="p-8 flex flex-row flex-wrap gap-6 justify-center
+                  lg:px-32"
       >
         {
           products.map((product, index) => {
             return (
-              <div key={index}>
+              <div key={index} className="flex justify-center items-center">
                 <ShopProduct 
                   name={product.name} 
                   img={product.img} 
