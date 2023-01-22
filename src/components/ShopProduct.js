@@ -1,6 +1,6 @@
 import React from "react";
 
-const Product = ({name, img, price, onClick }) => {
+const ShopProduct = ({name, img, price, onClick }) => {
 
   return(
     <div>
@@ -12,4 +12,4 @@ const Product = ({name, img, price, onClick }) => {
   );
 }
 
-export default Product;
+export default ShopProduct;

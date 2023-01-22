@@ -1,4 +1,4 @@
-import Product from "./Product";
+import ShopProduct from "./ShopProduct";
 import React from "react";
 
 const Shop = ({ products, addProductToCart}) => {
@@ -8,7 +8,7 @@ const Shop = ({ products, addProductToCart}) => {
           products.map((product, index) => {
             return (
               <div key={index}>
-                <Product 
+                <ShopProduct 
                   name={product.name} 
                   img={product.img} 
                   price={product.price} 
