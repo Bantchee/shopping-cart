@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shopping-cart/static/css/main.0c1762c7.css",
-    "main.js": "/shopping-cart/static/js/main.18befb8d.js",
+    "main.css": "/shopping-cart/static/css/main.1560f544.css",
+    "main.js": "/shopping-cart/static/js/main.54d30099.js",
     "static/media/water-bottle.jpg": "/shopping-cart/static/media/water-bottle.aece07425c65c5be4e3c.jpg",
     "static/media/women-shirt.jpg": "/shopping-cart/static/media/women-shirt.6a90b14343a3c863bc19.jpg",
     "static/media/women-shorts.jpg": "/shopping-cart/static/media/women-shorts.7655ce325c2aa72aa49c.jpg",
@@ -13,11 +13,11 @@
     "static/media/yoga-class.jpg": "/shopping-cart/static/media/yoga-class.3e042cd95923878af026.jpg",
     "static/media/men-tank.jpg": "/shopping-cart/static/media/men-tank.92553906445e89fafbc3.jpg",
     "index.html": "/shopping-cart/index.html",
-    "main.0c1762c7.css.map": "/shopping-cart/static/css/main.0c1762c7.css.map",
-    "main.18befb8d.js.map": "/shopping-cart/static/js/main.18befb8d.js.map"
+    "main.1560f544.css.map": "/shopping-cart/static/css/main.1560f544.css.map",
+    "main.54d30099.js.map": "/shopping-cart/static/js/main.54d30099.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c1762c7.css",
-    "static/js/main.18befb8d.js"
+    "static/css/main.1560f544.css",
+    "static/js/main.54d30099.js"
   ]
 }
