@@ -5,7 +5,7 @@ const Shop = ({ products, addProductToCart}) => {
     return (
       <div
         className="p-8 flex flex-row flex-wrap gap-6 justify-center
-                  lg:px-32"
+                    lg:px-20"
       >
         {
           products.map((product, index) => {
